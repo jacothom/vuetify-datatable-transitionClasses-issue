@@ -1,22 +1,34 @@
 # vuetify-datatable-transitionClasses-issue
 
-> My stupendous Nuxt.js project
-
-## Build Setup
+## Reproduction Steps
 
 ```bash
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
+# generate static site
 $ npm run generate
+
+# serve static site
+$ npx serve dist
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Open website now running on http://localhost:5000/ in Chrome. 
+
+* Open Chrome DevTools
+* Show device toolbar, and select iPhone 6/7/8.
+* Refresh the page.
+
+A data table will render, but the page will be unresponsive. 
+
+![Rendered data table](https://github.com/jacothom/vuetify-datatable-transitionClasses-issue/blob/master/static/rendered_data_table.png)
+
+The console will show the following errors
+
+![Console errors](https://github.com/jacothom/vuetify-datatable-transitionClasses-issue/blob/master/static/error_message.png)
+
+TypeError: Cannot read property '_transitionClasses' of undefined
+
+DOMException: Failed to execute 'appendChild' on 'Node': This node type does not support this method.
+
+
